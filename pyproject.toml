@@ -1,0 +1,282 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "divest"
+dynamic = ["version"]
+description = "2-5X faster LLM finetuning"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+keywords = ["ai", "llm",]
+authors = [
+    {email = "info@khulnasoft.com"},
+    {name = "Divest AI team"},
+]
+maintainers = [
+    {name = "nxpkg", email = "iconmamundentist@gmail.com"},
+    {name = "KhulnaSoft DevOps", email = "info@khulnasoft.com"},
+]
+classifiers = [
+    "Programming Language :: Python",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "divest.models._utils.__version__"}
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+exclude = ["images*"]
+
+[project.optional-dependencies]
+huggingface = [
+    "tyro",
+    "transformers>=4.38.2",
+    "datasets>=2.16.0",
+    "sentencepiece>=0.2.0",
+    "tqdm",
+    "psutil",
+    "wheel>=0.42.0",
+    "numpy",
+    "accelerate>=0.26.1",
+    "trl>=0.7.9,<0.9.0",
+    "peft>=0.7.1,!=0.11.0",
+    "protobuf<4.0.0",
+]
+cu118only = [
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.22.post7%2Bcu118-cp39-cp39-manylinux2014_x86_64.whl ; python_version=='3.9'",
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.22.post7%2Bcu118-cp310-cp310-manylinux2014_x86_64.whl ; python_version=='3.10'",
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.22.post7%2Bcu118-cp311-cp311-manylinux2014_x86_64.whl ; python_version=='3.11'",
+]
+cu121only = [
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.22.post7-cp39-cp39-manylinux2014_x86_64.whl ; python_version=='3.9'",
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.22.post7-cp310-cp310-manylinux2014_x86_64.whl ; python_version=='3.10'",
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.22.post7-cp311-cp311-manylinux2014_x86_64.whl ; python_version=='3.11'",
+]
+cu118onlytorch211 = [
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.23%2Bcu118-cp39-cp39-manylinux2014_x86_64.whl ; python_version=='3.9'",
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.23%2Bcu118-cp310-cp310-manylinux2014_x86_64.whl ; python_version=='3.10'",
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.23%2Bcu118-cp311-cp311-manylinux2014_x86_64.whl ; python_version=='3.11'",
+]
+cu121onlytorch211 = [
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.23-cp39-cp39-manylinux2014_x86_64.whl ; python_version=='3.9'",
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.23-cp310-cp310-manylinux2014_x86_64.whl ; python_version=='3.10'",
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.23-cp311-cp311-manylinux2014_x86_64.whl ; python_version=='3.11'",
+]
+cu118onlytorch212 = [
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.23.post1%2Bcu118-cp39-cp39-manylinux2014_x86_64.whl ; python_version=='3.9'",
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.23.post1%2Bcu118-cp310-cp310-manylinux2014_x86_64.whl ; python_version=='3.10'",
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.23.post1%2Bcu118-cp311-cp311-manylinux2014_x86_64.whl ; python_version=='3.11'",
+]
+cu121onlytorch212 = [
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.23.post1-cp39-cp39-manylinux2014_x86_64.whl ; python_version=='3.9'",
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.23.post1-cp310-cp310-manylinux2014_x86_64.whl ; python_version=='3.10'",
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.23.post1-cp311-cp311-manylinux2014_x86_64.whl ; python_version=='3.11'",
+]
+cu118onlytorch220 = [
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.24%2Bcu118-cp39-cp39-manylinux2014_x86_64.whl ; python_version=='3.9'",
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.24%2Bcu118-cp310-cp310-manylinux2014_x86_64.whl ; python_version=='3.10'",
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.24%2Bcu118-cp311-cp311-manylinux2014_x86_64.whl ; python_version=='3.11'",
+]
+cu121onlytorch220 = [
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.24-cp39-cp39-manylinux2014_x86_64.whl ; python_version=='3.9'",
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.24-cp310-cp310-manylinux2014_x86_64.whl ; python_version=='3.10'",
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.24-cp311-cp311-manylinux2014_x86_64.whl ; python_version=='3.11'",
+]
+cu118onlytorch230 = [
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.26.post1%2Bcu118-cp39-cp39-manylinux2014_x86_64.whl ; python_version=='3.9'",
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.26.post1%2Bcu118-cp310-cp310-manylinux2014_x86_64.whl ; python_version=='3.10'",
+    "xformers @ https://download.pytorch.org/whl/cu118/xformers-0.0.26.post1%2Bcu118-cp311-cp311-manylinux2014_x86_64.whl ; python_version=='3.11'",
+]
+cu121onlytorch230 = [
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.26.post1-cp39-cp39-manylinux2014_x86_64.whl ; python_version=='3.9'",
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.26.post1-cp310-cp310-manylinux2014_x86_64.whl ; python_version=='3.10'",
+    "xformers @ https://download.pytorch.org/whl/cu121/xformers-0.0.26.post1-cp311-cp311-manylinux2014_x86_64.whl ; python_version=='3.11'",
+]
+
+cu118 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu118only]",
+]
+cu121 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121only]",
+]
+cu118-torch211 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu118onlytorch211]",
+]
+cu121-torch211 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121onlytorch211]",
+]
+cu118-torch212 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu118onlytorch212]",
+]
+cu121-torch212 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121onlytorch212]",
+]
+cu118-torch220 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu118onlytorch220]",
+]
+cu121-torch220 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121onlytorch220]",
+]
+cu118-torch230 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu118onlytorch230]",
+]
+cu121-torch230 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121onlytorch230]",
+]
+kaggle = [
+    "divest[huggingface]",
+]
+kaggle-new = [
+    "divest[huggingface]",
+    "bitsandbytes",
+]
+conda = [
+    "divest[huggingface]",
+]
+colab-torch211 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121onlytorch211]",
+]
+colab-ampere-torch211 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121onlytorch211]",
+    "packaging",
+    "ninja",
+    "flash-attn",
+]
+colab-torch220 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121onlytorch220]",
+]
+colab-ampere-torch220 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121onlytorch220]",
+    "packaging",
+    "ninja",
+    "flash-attn",
+]
+colab-new = [
+    "tyro",
+    "transformers>=4.38.2",
+    "datasets>=2.16.0",
+    "sentencepiece",
+    "tqdm",
+    "psutil",
+    "wheel>=0.42.0",
+    "numpy",
+    "protobuf<4.0.0",
+]
+colab-no-deps = [
+    "accelerate>=0.26.1",
+    "trl>=0.7.9",
+    "peft>=0.7.1",
+    "xformers",
+    "bitsandbytes",
+    "protobuf<4.0.0",
+]
+colab = [
+    "divest[cu121]",
+]
+colab-ampere = [
+    "divest[colab-ampere-torch220]",
+    "packaging",
+    "ninja",
+    "flash-attn",
+]
+cu118-ampere = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu118only]",
+    "packaging",
+    "ninja",
+    "flash-attn",
+]
+cu121-ampere = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121only]",
+    "packaging",
+    "ninja",
+    "flash-attn",
+]
+cu118-ampere-torch211 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu118onlytorch211]",
+    "packaging",
+    "ninja",
+    "flash-attn",
+]
+cu121-ampere-torch211 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121onlytorch211]",
+    "packaging",
+    "ninja",
+    "flash-attn",
+]
+cu118-ampere-torch220 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu118onlytorch220]",
+    "packaging",
+    "ninja",
+    "flash-attn",
+]
+cu121-ampere-torch220 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121onlytorch220]",
+    "packaging",
+    "ninja",
+    "flash-attn",
+]
+cu118-ampere-torch230 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu118onlytorch230]",
+    "packaging",
+    "ninja",
+    "flash-attn",
+]
+cu121-ampere-torch230 = [
+    "divest[huggingface]",
+    "bitsandbytes",
+    "divest[cu121onlytorch230]",
+    "packaging",
+    "ninja",
+    "flash-attn",
+]
+
+[project.urls]
+homepage = "http://www.divest.khulnasoft.com"
+documentation = "https://github.com/khulnasoft/divest"
+repository = "https://github.com/khulnasoft/divest"
